@@ -4,21 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/karigirwa/backend.git"
-  },
-  "author": "Karigirwa",
+  "author": "Happiness",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/karigirwa/backend/issues"
-  },
-  "homepage": "https://github.com/karigirwa/backend#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",

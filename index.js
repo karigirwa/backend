@@ -1,11 +1,21 @@
-var express=require("express");
-var app=express();
-app.get("/",function(req,res){
-    res.send("Hello world");
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+
+
+
+// Connect to MongoDB database
+mongoose.connect("mongodb://localhost:27017/updates",{useNewUrlParser: true }).then(() =>{
+
+app.use(express.json());
+
+const blogger = require("./controller/blogs");
+
+app.use("/",blogger);  
+
+    app.listen(9000, ( ) => {
+        console.log("<< localhost:9000>>");
+    }); 
+}).catch(()=>{
+    console.log('connection has failed')
 });
-
-app.listen(8000,function(){
-console.log("<<localhost:8000>>");
-
-});
-
