@@ -38,3 +38,6 @@ mongoose.connect("mongodb://localhost:27017/updates",{useNewUrlParser: true, use
 }).catch(()=>{
     console.log('connection has failed')
 });
+app.get('/', (req, res) => {
+    res.json({"message": "Welcome to Backend. "});
+});
