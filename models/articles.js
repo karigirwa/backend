@@ -2,11 +2,11 @@ const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
   title: {
-    type: String,
+    type: String
    
   },
   Author: {
-    type: String,
+    type: String
    
   },
   date: {
@@ -15,7 +15,7 @@ const schema = mongoose.Schema({
     default: Date.now
   },
   content: {
-    type: String,
+    type: String
    
     
   }

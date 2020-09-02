@@ -17,19 +17,17 @@ router.get('/v1/blogs', async (req, res) => {
  
   // Creating one
 router.post('/v1/blogs', async (req, res) => {
-  try { 
-  const data = new articles({
-      title: req.body.title,
-      Writter: req.body.Writter,
-      date:req.body.date,
-      content:req.body.content
-    })
-   
-      const newArticles = await data.save()
-      res.status(201).json(newArticles)
-    } catch (err) {
-      res.status(400).json({ message: err.message })
-    }
+const blog = new articles(req.body)
+blog.save(blog)
+ .then(data =>{
+    res.send(data);
+}).catch(err =>{
+    res.status(500).send({
+        message:err.message || "Same error occurred while creating an article"
+    });
+});
+
+
   })
 
   

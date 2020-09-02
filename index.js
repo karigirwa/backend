@@ -32,9 +32,12 @@ app.listen(port, () => {
 });
 
 // Connect to MongoDB database
-
-mongoose.connect("mongodb://localhost:27017/updates",{useNewUrlParser: true, useUnifiedTopology: true })
+//"mongodb://localhost:27017/updates"
+//mongodb+srv://Happy:<password>@datastore.jdhkk.mongodb.net/<dbname>?retryWrites=true&w=majority
+mongoose
+.connect("mongodb+srv://Happy:RA2WH9nFd5erM52@datastore.jdhkk.mongodb.net/Store?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
 .then(() =>{   
+    console.log('database connected')
 }).catch(()=>{
     console.log('connection has failed')
 });
