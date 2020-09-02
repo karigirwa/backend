@@ -26,10 +26,10 @@ app.use("/",blogger);
 
 app.use("/user",userRoutes);
 
-    app.listen(3000, ( ) => {
-        console.log("<< localhost:3000>>");
-    });
-
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}....`);
+});
 
 // Connect to MongoDB database
 

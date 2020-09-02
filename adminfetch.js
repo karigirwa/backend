@@ -25,7 +25,7 @@ const renderPost = (doc) => {
     container.appendChild(post)
 
     deleteBtn.addEventListener('click', (e) => {
-        let varConfirm = confirm("Are you sure you want to delete🙄")
+        let varConfirm = confirm("you want to delete this surely?")
         if (varConfirm == true) {
             let id = e.target.parentElement.getAttribute('data_id')
             console.log(id)
@@ -45,24 +45,8 @@ const renderPost = (doc) => {
 
 }
 
-const posts = [
-    {
-        title: "Ronald Mugema",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea rem velit voluptatibus veniam. Id, est. Natus tempore eveniet possimus ut, sed est nostrum repudiandae quo suscipit earum magni consequuntur ipsum distinctio fuga culpa atque autem repellat recusandae! Soluta explicabo numquam tempore, amet tenetur placeat accusantium et quas dolorem laboriosam. Exercitationem sint soluta mollitia expedita vel porro vitae itaque beatae."
-    },
 
-    {
-        title: "Happy Karigirwa",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea rem velit voluptatibus veniam. Id, est. Natus tempore eveniet possimus ut, sed est nostrum repudiandae quo suscipit earum magni consequuntur ipsum distinctio fuga culpa atque autem repellat recusandae! Soluta explicabo numquam tempore, amet tenetur placeat accusantium et quas dolorem laboriosam. Exercitationem sint soluta mollitia expedita vel porro vitae itaque beatae."
-    },
 
-    {
-        title: "Gerard Niyigena",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea rem velit voluptatibus veniam. Id, est. Natus tempore eveniet possimus ut, sed est nostrum repudiandae quo suscipit earum magni consequuntur ipsum distinctio fuga culpa atque autem repellat recusandae! Soluta explicabo numquam tempore, amet tenetur placeat accusantium et quas dolorem laboriosam. Exercitationem sint soluta mollitia expedita vel porro vitae itaque beatae."
-    }
-]
-
-//console.log(posts)
 
 // posts.forEach(el => renderPost(el))
 
