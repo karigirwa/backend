@@ -7,7 +7,17 @@ const cors = require("cors");
 app.use(express.json());
 const userRoutes = require('./signin/routes/user');
 const blogger = require("./controller/blogs");
+mongoose
+.connect("mongodb+srv://Happy:RA2WH9nFd5erM52@datastore.jdhkk.mongodb.net/Store?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
+.then(() =>{   
+    console.log('database connected')
+}).catch(()=>{
+    console.log('connection has failed')
+});
 
+app.get('/', (req, res) => {
+    res.json({"message": "Welcome to My Blog Backend. "});
+});
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors());
@@ -34,13 +44,3 @@ app.listen(port, () => {
 // Connect to MongoDB database
 //"mongodb://localhost:27017/updates"
 //mongodb+srv://Happy:<password>@datastore.jdhkk.mongodb.net/<dbname>?retryWrites=true&w=majority
-mongoose
-.connect("mongodb+srv://Happy:RA2WH9nFd5erM52@datastore.jdhkk.mongodb.net/Store?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
-.then(() =>{   
-    console.log('database connected')
-}).catch(()=>{
-    console.log('connection has failed')
-});
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to Backend. "});
-});
