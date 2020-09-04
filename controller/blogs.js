@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const articles = require("../models/articles");
+const CheckAuth = require("../signin/middleware/check-auth");
 
 
 // Getting all
@@ -16,7 +17,7 @@ router.get('/v1/blogs', async (req, res) => {
 
  
   // Creating one
-router.post('/v1/blogs', async (req, res) => {
+router.post('/v1/blogs',CheckAuth, async (req, res) => {
 const blog = new articles(req.body)
 blog.save(blog)
  .then(data =>{
@@ -33,7 +34,7 @@ blog.save(blog)
   
 
  // Updating One
-  router.patch('/v1/blogs/:id',getArticles, async (req, res) => {
+  router.patch('/v1/blogs/:id',CheckAuth,getArticles, async (req, res) => {
       if (req.body.title != null) {
         res.data.title = req.body.title
       }
@@ -55,7 +56,7 @@ blog.save(blog)
     })  
 
    // Deleting One
-  router.delete('/v1/blogs/:id',getArticles,async (req, res) => {
+  router.delete('/v1/blogs/:id',CheckAuth,getArticles,async (req, res) => {
     
       try {
         await res.data.remove()
