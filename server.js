@@ -2,9 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const cors = require("cors");
-
 const userRoutes = require('./signin/routes/user');
 const blogger = require("./controller/blogs");
 //connect("mongodb://localhost:27017/updates", { useNewUrlParser: true })
@@ -27,18 +26,12 @@ var allowCrossDomain = function(req, res, next){
     next();
 };
 app.use(allowCrossDomain);
-
-
-app.use("/",blogger);  
-
-
+app.use("/",blogger); 
 app.use("/user",userRoutes);
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}....`);
-});
-
+const port = process.env.PORT || 2300;
+ app.listen(port, () => {
+     console.log(`Server is listening on port ${port}....`);
+ });
 // Connect to MongoDB database
 //"mongodb://localhost:27017/updates"
 //mongodb+srv://Happy:<password>@datastore.jdhkk.mongodb.net/<dbname>?retryWrites=true&w=majority
