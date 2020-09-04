@@ -28,7 +28,7 @@ var allowCrossDomain = function(req, res, next){
 app.use(allowCrossDomain);
 app.use("/",blogger); 
 app.use("/user",userRoutes);
-const port = process.env.PORT || 2300;
+const port = 3000 ||  process.env.PORT;
  app.listen(port, () => {
      console.log(`Server is listening on port ${port}....`);
  });
