@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const userRoutes = require('./signin/routes/user');
 const blogger = require("./controller/blogs");
+//connect("mongodb://localhost:27017/updates", { useNewUrlParser: true })
 mongoose
 .connect("mongodb+srv://Happy:RA2WH9nFd5erM52@datastore.jdhkk.mongodb.net/Store?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
 .then(() =>{   

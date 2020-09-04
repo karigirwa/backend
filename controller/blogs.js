@@ -17,7 +17,7 @@ router.get('/v1/blogs', async (req, res) => {
 
  
   // Creating one
-router.post('/v1/blogs',CheckAuth, async (req, res) => {
+router.post('/v1/blogs',CheckAuth,async (req, res) => {
 const blog = new articles(req.body)
 blog.save(blog)
  .then(data =>{
